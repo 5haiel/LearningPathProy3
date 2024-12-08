@@ -16,13 +16,14 @@ import javax.swing.JTextField;
 public class PanelObjetivos extends JPanel
 {
 	private JComboBox<Integer> ccbNumObjetivos;
-	private JFrame frameContenedor;
+	private ActionListener listener;
 	
 	private JPanel pObjetivos;
+	public static final String NUMOBJETIVOS= VentanaCreacionCamino.NUMOBJETIVOS ;
 
-	public PanelObjetivos(JFrame frameContenedor)
+	public PanelObjetivos(ActionListener listener)
 	{
-    	this.frameContenedor=frameContenedor;
+    	this.listener=listener;
 
     	this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS ) );
 
@@ -34,8 +35,8 @@ public class PanelObjetivos extends JPanel
     	Integer[] numeroObjetivos = new Integer[]{1,2,3,4,5,6,7,8,9,10};
     	ccbNumObjetivos=new JComboBox<Integer>(numeroObjetivos);
     	ccbNumObjetivos.setEnabled(true);
-    	ccbNumObjetivos.addActionListener((ActionListener) this.frameContenedor);
-    	ccbNumObjetivos.setActionCommand( VentanaCreacionCamino.NUMOBJETIVOS );
+    	ccbNumObjetivos.addActionListener(this.listener);
+    	ccbNumObjetivos.setActionCommand( NUMOBJETIVOS );
     	
     	pNumObjetivos.setLayout(new FlowLayout(FlowLayout.CENTER));
     	pNumObjetivos.add(lblObjetivos);

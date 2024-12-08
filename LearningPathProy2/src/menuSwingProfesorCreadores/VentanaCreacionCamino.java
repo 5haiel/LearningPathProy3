@@ -39,7 +39,6 @@ public class VentanaCreacionCamino extends JFrame implements ActionListener
 	private JTextField txtDescripcion;
 	private JTextField txtDificultad;
 		
-	private JComboBox<Integer> ccbNumObjetivos;
 	public static final String NUMOBJETIVOS="numero objetivos";
 	
 	private PanelObjetivos pObjetivos; 
@@ -155,7 +154,7 @@ public class VentanaCreacionCamino extends JFrame implements ActionListener
         {
         	try 
         	{
-        		pObjetivos.guardarObjetivos(lstObjetivos);
+        		lstObjetivos=pObjetivos.guardarObjetivos(lstObjetivos);
 				CreadorCamino.crearCaminoCero(txtTitulo.getText(), txtDescripcion.getText(), lstObjetivos, 
 						Double.valueOf(txtDificultad.getText()), idProfesor);
 				

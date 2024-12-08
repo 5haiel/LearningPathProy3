@@ -84,7 +84,7 @@ public class PanelObjetivos extends JPanel
 		pObjetivos.setVisible(true);
 	}
 
-	public void guardarObjetivos(List<String> lstObjetivos) 
+	public List<String> guardarObjetivos(List<String> lstObjetivos) 
 	{
 		for (Component pObjetivoInd : pObjetivos.getComponents())
 		{
@@ -93,5 +93,7 @@ public class PanelObjetivos extends JPanel
 			
 			lstObjetivos.add(strObjetivo);
 		}
+		
+		return lstObjetivos;
 	}
 }

@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 import menuSwingProfesorCreadores.VentanaCreacionCamino;
+import menuSwingProfesorCreadores.VentanaMenuCrearActividad;
 
 
 public class VentanaMenuProfesor extends JFrame
@@ -16,7 +17,7 @@ public class VentanaMenuProfesor extends JFrame
 	private VentanaCaminosDisp ventCaminosDisp;
 	private VentanaCreacionCamino ventCrearCamino;
 	private VentanaCaminosCreados ventCaminosCreados;
-
+	private VentanaMenuCrearActividad ventCrearActividad;
 	
 	public VentanaMenuProfesor( String idProfesorP)
 	{
@@ -62,6 +63,16 @@ public class VentanaMenuProfesor extends JFrame
         {
 			ventCrearCamino = new VentanaCreacionCamino(idProfesor);
 			ventCrearCamino.setVisible( true );
+        }
+		
+	}
+	
+	public void mostrarVentanaCrearActividad() 
+	{
+		if( ventCrearActividad == null || !ventCrearActividad.isVisible( ) )
+        {
+			ventCrearActividad = new VentanaMenuCrearActividad(idProfesor);
+			ventCrearActividad.setVisible( true );
         }
 		
 	}

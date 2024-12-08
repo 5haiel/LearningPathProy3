@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 public class PanelBotonesActividades extends JPanel
@@ -20,10 +19,10 @@ public class PanelBotonesActividades extends JPanel
 	public static final String QUIZ="Quiz";
 	
 	private JButton bTarea;
-	public static final String TAREA="Quiz";
+	public static final String TAREA="Tarea";
 
 	private JButton bExamen;
-	public static final String EXAMEN="Quiz";
+	public static final String EXAMEN="Examen";
 	
 	private ActionListener listener;
 	

@@ -20,14 +20,17 @@ public class VentanaMenuCrearActividad extends JFrame implements ActionListener
 	private JButton bRegresar;
 	public static final String REGRESAR="regresar";
 	
-	private VentanaCrearEncuesta ventCrearEncuesta;
-	private VentanaCrearAR ventCrearAR;
-	private VentanaCrearExamen ventCrearExamen;
-	private VentanaCrearTarea ventCrearTarea;
-	private VentanaCrearQuiz ventCrearQuiz;
+	private VentanaCrearEncuesta ventCrearEncuesta=null;
+	private VentanaCrearAR ventCrearAR=null;
+	private VentanaCrearExamen ventCrearExamen=null;
+	private VentanaCrearTarea ventCrearTarea=null;
+	private VentanaCrearQuiz ventCrearQuiz=null;
+	
+	private String idProfesor;
 	
 	public VentanaMenuCrearActividad(String idProfesor)
 	{
+		this.idProfesor=idProfesor;
 		this.setLayout(new BorderLayout() );
 	   
         bRegresar = new JButton( "Regresar" );
@@ -39,6 +42,13 @@ public class VentanaMenuCrearActividad extends JFrame implements ActionListener
 	   
 	   this.pActividadesMenu=new PanelBotonesActividades(this);
 	   this.add(pActividadesMenu, BorderLayout.CENTER);
+	   
+       // Termina de configurar la ventana
+       setTitle( "Learning Path System: Crear actividad menu" );
+       setDefaultCloseOperation( EXIT_ON_CLOSE );
+       setSize( 400, 400 );
+       setLocationRelativeTo( null );
+       setVisible( true );
 
 	}
 
@@ -76,28 +86,49 @@ public class VentanaMenuCrearActividad extends JFrame implements ActionListener
 
 	private void mostrarVentanaAR() 
 	{
-		// TODO Auto-generated method stub
-		
+		if( ventCrearAR == null || !ventCrearAR.isVisible( ) )
+        {
+			ventCrearAR = new VentanaCrearAR(idProfesor);
+			ventCrearAR.setVisible( true );
+        }
 	}
 
-	private void mostrarVentanaTarea() {
-		// TODO Auto-generated method stub
-		
+	private void mostrarVentanaTarea()
+	{
+		if( ventCrearTarea == null || !ventCrearTarea.isVisible( ) )
+        {
+			ventCrearTarea = new VentanaCrearTarea(idProfesor);
+			ventCrearTarea.setVisible( true );
+        }
 	}
 
 	private void mostrarVentanaQuiz() 
 	{
-		// TODO Auto-generated method stub
+		if( ventCrearQuiz == null || !ventCrearQuiz.isVisible( ) )
+        {
+			ventCrearQuiz = new VentanaCrearQuiz(idProfesor);
+			ventCrearQuiz.setVisible( true );
+        }
 		
 	}
 
-	private void mostrarVentanaExamen() {
-		// TODO Auto-generated method stub
+	private void mostrarVentanaExamen() 
+	{
+		if( ventCrearExamen == null || !ventCrearExamen.isVisible( ) )
+        {
+			ventCrearExamen = new VentanaCrearExamen(idProfesor);
+			ventCrearExamen.setVisible( true );
+        }
 		
 	}
 
-	private void mostrarVentanaEncuesta() {
-		// TODO Auto-generated method stub
+	private void mostrarVentanaEncuesta() 
+	{
+		if( ventCrearEncuesta == null || !ventCrearEncuesta.isVisible( ) )
+        {
+			ventCrearEncuesta = new VentanaCrearEncuesta(idProfesor);
+			ventCrearEncuesta.setVisible( true );
+        }
 		
 	}
 }

@@ -26,9 +26,12 @@ public abstract class VentanaCreacionActividad extends JFrame implements ActionL
 
 	protected JButton bCrearActividad;
 	public static final String CREARACTIVIDAD= "crear actividad";
+	
+	protected String idProfesor;
 
 	public VentanaCreacionActividad(String idProfesor)
 	{
+		this.idProfesor=idProfesor;
 		this.setLayout(new BorderLayout());
 		
     	//Boton de regresar
@@ -41,7 +44,7 @@ public abstract class VentanaCreacionActividad extends JFrame implements ActionL
         pBotones.add( bRegresar );
         bRegresar.setAlignmentX(Component.CENTER_ALIGNMENT);
  
-        bCrearActividad= new JButton( "Crear camino" );
+        bCrearActividad= new JButton( "Crear actividad" );
         bCrearActividad.setActionCommand( CREARACTIVIDAD );
         bCrearActividad.addActionListener( this );
         pBotones.add( bCrearActividad );
@@ -51,6 +54,12 @@ public abstract class VentanaCreacionActividad extends JFrame implements ActionL
 		this.add(pBotones, BorderLayout.SOUTH);
 		
 		addPInfoActividad();
+		
+	    // Termina de configurar la ventana
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setSize( 800, 800 );
+        setLocationRelativeTo( null );
+        setVisible( true );
 	}
 	
 	protected abstract void crearActividad();

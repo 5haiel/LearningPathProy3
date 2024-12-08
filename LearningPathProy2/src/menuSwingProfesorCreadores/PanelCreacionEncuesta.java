@@ -1,7 +1,18 @@
 package menuSwingProfesorCreadores;
 
-public class PanelCreacionEncuesta extends PanelCreacionActividad
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import creadores.CreadorCamino;
+
+public class PanelCreacionEncuesta extends PanelCreacionActividad implements ActionListener
 {
+	protected PanelPreguntasAbiertas pPreguntas;
+		
 	public PanelCreacionEncuesta() 
 	{
 		super();
@@ -10,7 +21,23 @@ public class PanelCreacionEncuesta extends PanelCreacionActividad
 	@Override
 	public void addInfoEspecifica() 
 	{
-		// TODO Auto-generated method stub
-		
+		pPreguntas = new PanelPreguntasAbiertas(this);
+		this.add(pPreguntas);
+		pPreguntas.setAlignmentX(Component.CENTER_ALIGNMENT);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) 
+	{
+        String comando = e.getActionCommand( );
+                
+        if (comando.equals(PanelObjetivos.NUMOBJETIVOS))
+        {
+        	pObjetivos.mostrarPanelObjetivos();
+        }
+        else if (comando.equals(PanelPreguntasAbiertas.NUMPREGUNTAS))
+        {
+        	pPreguntas.mostrarPanelPreguntas();
+        }
 	}
 }

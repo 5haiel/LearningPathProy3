@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -27,7 +26,7 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
 	protected JTextField txtMes;
 	protected JTextField txtDia;
 	
-    private JComboBox<String> ccbObligatoria;
+	protected JComboBox<String> ccbObligatoria;
 
 	protected PanelObjetivos pObjetivos;
 
@@ -61,6 +60,8 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
        	this.addInfoEspecifica();
 	}
 	
+	public abstract void addInfoEspecifica();
+
 	public void addTextFields()
 	{
         //ID camino 
@@ -109,7 +110,7 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
         txtDificultad = new JTextField( 15 );
         txtDificultad.setEditable( true );
     	
-    	JLabel lblDificultad= new JLabel("Dificultad (escribe el numero en formato 1.0): ");
+    	JLabel lblDificultad= new JLabel("Dificultad (escribe el numero en formato #.#): ");
 
     	JPanel pDificultad= new JPanel();
     	pDificultad.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -140,8 +141,8 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
 
     	JPanel pPosCamino= new JPanel();
     	pPosCamino.setLayout(new FlowLayout(FlowLayout.CENTER));
-    	pPosCamino.add(lblDuracion);
-    	pPosCamino.add(txtDuracion);
+    	pPosCamino.add(lblPosCamino);
+    	pPosCamino.add(txtPosCamino);
     	
     	this.add(pPosCamino);
 
@@ -151,19 +152,19 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
     	
         txtAnio = new JTextField( 15 );
         txtAnio.setEditable( true );
-    	JLabel lblAnio= new JLabel("Año límite: ");
+    	JLabel lblAnio= new JLabel("Año límite ####: ");
     	pFecha.add(lblAnio);
     	pFecha.add(txtAnio);
     	
         txtMes = new JTextField( 15 );
         txtMes.setEditable( true );
-    	JLabel lblMes= new JLabel("Mes límite: ");
+    	JLabel lblMes= new JLabel("Mes límite ##: ");
     	pFecha.add(lblMes);
     	pFecha.add(txtMes);
     	
         txtDia = new JTextField( 15 );
         txtDia.setEditable( true );
-    	JLabel lblDia= new JLabel("Dia límite: ");
+    	JLabel lblDia= new JLabel("Dia límite ##: ");
     	pFecha.add(lblDia);
     	pFecha.add(txtDia);
     	
@@ -183,6 +184,60 @@ public abstract class PanelCreacionActividad extends JPanel implements ActionLis
         }
 	}
 	
-	public abstract void addInfoEspecifica();
+	public String getIDCamino()
+	{
+		return this.txtIDCamino.getText();
+	}
 	
+	public String getNombre()
+	{
+		return this.txtNombre.getText();
+	}
+	
+	public String getPosCamino()
+	{
+		return this.txtPosCamino.getText();
+	}
+	
+	public String getDescricpion()
+	{
+		return this.txtDescripcion.getText();
+	}
+	
+	public String getDificultad()
+	{
+		return this.txtDificultad.getText();
+	}
+	
+	public String getDuracion()
+	{
+		return this.txtDuracion.getText();
+	}
+	
+	public String getAnio()
+	{
+		return this.txtAnio.getText();
+	}
+	
+	public String getMes()
+	{
+		return this.txtMes.getText();
+	}
+	
+	public String getDia()
+	{
+		return this.txtDia.getText();
+	}
+	
+	public boolean getObligatoria()
+	{
+		if (this.ccbObligatoria.getSelectedItem().equals("Si"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

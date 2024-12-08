@@ -6,6 +6,7 @@ public class VentanaCrearQuiz extends VentanaCreacionActividad
 	public VentanaCrearQuiz(String idProfesor) 
 	{
 		super(idProfesor);
+		this.setTitle("Learning Path System: Creacion de quiz");
 	}
 
 	@Override

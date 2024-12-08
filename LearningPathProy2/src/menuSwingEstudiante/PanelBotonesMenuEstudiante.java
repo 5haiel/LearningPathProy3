@@ -87,7 +87,7 @@ public class PanelBotonesMenuEstudiante extends JPanel implements ActionListener
         {
         	ventMenuEst.mostrarVentanaAvances();
         }
-        else if ( comando.equals( AVANCES ) )
+        else if ( comando.equals( ACT_INC_ENV ) )
         {
         	ventMenuEst.mostrarVentanaActividadEnvio();
         }

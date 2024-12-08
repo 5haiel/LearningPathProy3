@@ -2,6 +2,7 @@ package menuSwingProfesorCreadores;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,7 +37,7 @@ public abstract class VentanaCreacionActividad extends JFrame implements ActionL
 		
     	//Boton de regresar
 		pBotones = new JPanel();
-		pBotones.setLayout(new BoxLayout(pBotones, BoxLayout.Y_AXIS ) );
+		pBotones.setLayout(new FlowLayout( ));
 		
         bRegresar = new JButton( "Regresar" );
         bRegresar.setActionCommand( REGRESAR );

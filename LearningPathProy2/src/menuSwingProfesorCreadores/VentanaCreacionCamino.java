@@ -66,7 +66,7 @@ public class VentanaCreacionCamino extends JFrame implements ActionListener
 	{
     	//Boton de regresar
 		JPanel pBotones = new JPanel();
-		pBotones.setLayout(new BoxLayout(pBotones, BoxLayout.Y_AXIS ) );
+		pBotones.setLayout(new FlowLayout( ));
 		
         bRegresar = new JButton( "Regresar" );
         bRegresar.setActionCommand( REGRESAR );

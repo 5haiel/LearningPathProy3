@@ -1,0 +1,23 @@
+{
+ "descripcion": "Una encuesta para saber si te gusto el curso",
+ "ratingsTotales": 0,
+ "actividadesSigExitoso": [],
+ "actividadesPrereqs": [],
+ "preguntasAbiertas": ["¿Te gusto el curso?"],
+ "rating": 0,
+ "datosEstudiantes": ["DatoEstudiante_7b095dd1-cc26-46e1-a437-1c29ef93cdd1"],
+ "resenias": [],
+ "type": "Encuesta",
+ "nombre": "Encuesta de satisfaccion",
+ "fechaLim": [
+  2222,
+  12,
+  12
+ ],
+ "objetivos": ["Dar tu opinion"],
+ "duracion": 5,
+ "obligatoria": false,
+ "creadorID": "Profesor-wizardLady",
+ "id": "Actividadc6151b4a-63ea-4c04-9797-7955f0242cbd",
+ "dificultad": 1
+}

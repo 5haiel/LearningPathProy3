@@ -1,5 +1,7 @@
 package menuSwingProfesorCreadores;
 
+import java.awt.BorderLayout;
+
 public class VentanaCrearQuiz extends VentanaCreacionActividad
 {
 
@@ -17,9 +19,10 @@ public class VentanaCrearQuiz extends VentanaCreacionActividad
 	}
 
 	@Override
-	protected void addPInfoActividad() {
-		// TODO Auto-generated method stub
-		
+	protected void addPInfoActividad() 
+	{
+		pInfoActividad= new PanelCreacionQuiz();
+		this.add(pInfoActividad, BorderLayout.CENTER);
 	}
 
 }

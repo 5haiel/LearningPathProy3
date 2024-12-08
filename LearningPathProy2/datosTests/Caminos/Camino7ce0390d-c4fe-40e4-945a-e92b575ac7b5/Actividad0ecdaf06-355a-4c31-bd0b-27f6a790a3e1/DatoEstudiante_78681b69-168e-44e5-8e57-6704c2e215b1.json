@@ -1,0 +1,75 @@
+{
+ "envio": [
+  {
+   "textoPregunta": "Si quiero representar el número de vacas que tengo, que tipo de variable debería usar?",
+   "opciones": [
+    {
+     "texto": "int",
+     "correcta": true,
+     "explicacion": "Porque es un entero",
+     "numOpcion": 1
+    },
+    {
+     "texto": "double",
+     "correcta": false,
+     "explicacion": "Porque no es un decimal",
+     "numOpcion": 2
+    },
+    {
+     "texto": "float",
+     "correcta": false,
+     "explicacion": "Porque no es un decimal",
+     "numOpcion": 3
+    },
+    {
+     "texto": "string",
+     "correcta": false,
+     "explicacion": "Porque es un numero",
+     "numOpcion": 4
+    }
+   ],
+   "respuestaUsuario": 4,
+   "respuesta": 1,
+   "cantidadOpciones": 4
+  },
+  {
+   "textoPregunta": "Cual es el mejor pajaro?",
+   "opciones": [
+    {
+     "texto": "Paloma",
+     "correcta": false,
+     "explicacion": "Porque son sucias",
+     "numOpcion": 1
+    },
+    {
+     "texto": "Cuervo",
+     "correcta": true,
+     "explicacion": "Porque son hermosos e inteligentes",
+     "numOpcion": 2
+    },
+    {
+     "texto": "Pechirrojo",
+     "correcta": false,
+     "explicacion": "Tierno pero es muy pequeño",
+     "numOpcion": 3
+    },
+    {
+     "texto": "Vaca",
+     "correcta": false,
+     "explicacion": "La vaca no es un pajaro",
+     "numOpcion": 4
+    }
+   ],
+   "respuestaUsuario": 2,
+   "respuesta": 2,
+   "cantidadOpciones": 4
+  }
+ ],
+ "IDEstudiante": "Estudiante-Trey999",
+ "estado": "No exitoso",
+ "calificacion": 2.5,
+ "fechaInicio": "Fri Dec 06 21:05:33 COT 2024",
+ "fechaFinal": "Fri Dec 06 21:05:33 COT 2024",
+ "id": "DatoEstudiante_78681b69-168e-44e5-8e57-6704c2e215b1",
+ "type": "DatosQuiz"
+}

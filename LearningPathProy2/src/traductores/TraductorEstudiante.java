@@ -165,4 +165,19 @@ public class TraductorEstudiante
 		
 		return estudiante.getNombreCaminoActividadActiva();
 	}
+	
+	public static boolean isActividadActiva(String idEstudiante) throws Exception
+	{
+		LearningPathSystem LPS = LearningPathSystem.getInstance();
+		HashMap<String, Estudiante> estudiantes = LPS.getEstudiantes();
+		
+		Estudiante estudiante=estudiantes.get(idEstudiante);
+		
+		if (estudiante==null)
+		{
+			throw new Exception ("No se encontro el estudiante");
+		}
+		
+		return estudiante.isActividadActiva();
+	}
 }

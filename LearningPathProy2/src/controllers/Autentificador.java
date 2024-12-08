@@ -57,21 +57,14 @@ public class Autentificador {
 			String ID = "Estudiante-"+loginUsuario;
 			if (LPS.getEstudianteIndividual(ID) == null) 
 			{
-				try 
+				CreadorEstudiante.crearEstudiante(loginUsuario, constrasenaUsuario, nombreUsuario);
+				if (LPS.getEstudianteIndividual(ID) != null) 
 				{
-					CreadorEstudiante.crearEstudiante(loginUsuario, constrasenaUsuario, nombreUsuario);
-					if (LPS.getEstudianteIndividual(ID) != null) 
-					{
-						return true;
-					} 
-					else
-						return false;
+					return true;
 				} 
-				catch (Exception e)
-				{
-					e.getMessage();
-					e.printStackTrace();
-				}
+				else
+					return false;
+
 			}
 		} 
 		else if (tipoUsuario == 2) // Profesor
@@ -91,7 +84,6 @@ public class Autentificador {
 				catch (Exception e) 
 				{
 					e.getMessage();
-					e.printStackTrace();
 				}
 
 			}
@@ -109,7 +101,6 @@ public class Autentificador {
 			catch (Exception e) 
 			{
 				e.getMessage();
-				e.printStackTrace();
 			}
 		} 
 		else if (LPS.getProfesorIndividual(ID) != null) 
@@ -121,7 +112,6 @@ public class Autentificador {
 			catch (Exception e) 
 			{
 				e.getMessage();
-				e.printStackTrace();
 			}
 		}
 	}

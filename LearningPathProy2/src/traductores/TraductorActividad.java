@@ -107,7 +107,9 @@ public class TraductorActividad {
 		infoActividad.put("Descripcion: ", actividad.getDescripcion() + "\n");
 		infoActividad.put("Dificultad: ", String.valueOf(actividad.getDificultad()) + "\n");
 		infoActividad.put("Duracion: ", String.valueOf(actividad.getDuracion()) + "\n");
-		infoActividad.put("Fecha límite: ", actividad.getFechaLim() + "\n");
+		infoActividad.put("Fecha límite: ", String.valueOf(actividad.getFechaLim()[0])+" dias, "+
+				String.valueOf(actividad.getFechaLim()[1])+" meses, " +
+				String.valueOf(actividad.getFechaLim()[2])+" anios"+ "\n");
 		
 		Profesor profesor = LPS.getProfesorIndividual(actividad.getCreadorID());
 		infoActividad.put("Nombre Profesor creador: ", profesor.getNombre() + "\n");

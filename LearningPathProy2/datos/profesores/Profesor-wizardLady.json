@@ -1,6 +1,9 @@
 {
  "password": "betty123",
- "caminos": ["Camino3ad198b0-e6b4-4278-a332-2723bc8482e8"],
+ "caminos": [
+  "Camino3ad198b0-e6b4-4278-a332-2723bc8482e8",
+  "Camino14f36c2e-3b8c-4ac4-90a2-db381d643b97"
+ ],
  "ID": "Profesor-wizardLady",
  "login": "wizardLady",
  "type": "Profesor",

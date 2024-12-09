@@ -2,6 +2,7 @@ package menuSwingEstudiante;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +25,7 @@ public class VentanaMenuEstudiante extends JFrame
 	private VentanaCaminosDispInscripcion ventCaminosDisp=null;
 	private VentanaAvancesEstudiante ventAvances=null;
 	private VentanaActividadIniciada ventActividadIniciada=null;
+	private VentanaActividadesDisponibles ventActividadesDisp=null;
 	
 	private String idEstudiante;
 	
@@ -65,6 +67,31 @@ public class VentanaMenuEstudiante extends JFrame
         }
 		
 	}
+	
+	public void mostrarVentanaActividadesDisponibles()
+	{
+		try
+		{
+			if (TraductorEstudiante.isActividadActiva(idEstudiante))
+			{
+				JOptionPane.showMessageDialog(null, "Ya hay una actividad iniciada");
+			}
+			else
+			{
+				ventActividadesDisp = new VentanaActividadesDisponibles(idEstudiante);
+				ventActividadesDisp.setVisible(true);
+			}
+		}
+		catch (HeadlessException e)
+		{
+			e.printStackTrace();
+		}
+		catch (Exception e)
+		{
+			JOptionPane.showMessageDialog(null, "Error al verificar actividades disponibles: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+		}
+	}
 
 
 	public void mostrarVentanaActividadEnvio() 
@@ -100,7 +127,7 @@ public class VentanaMenuEstudiante extends JFrame
 		
 	}
     
-  
+	
 		
 
 }

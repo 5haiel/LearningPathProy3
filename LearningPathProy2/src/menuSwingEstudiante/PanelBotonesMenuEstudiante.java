@@ -23,6 +23,9 @@ public class PanelBotonesMenuEstudiante extends JPanel implements ActionListener
 	private JButton bActividadIniciadaEnvio;
 	public static final String ACT_INC_ENV="actividad iniciada envio";
 	
+	private JButton bActividadesDisponibles;
+	public static final String ACT_DISP="actividades disp";
+	
 	private JButton bSalir;
 	public static final String SALIR="salir";
 	
@@ -52,6 +55,12 @@ public class PanelBotonesMenuEstudiante extends JPanel implements ActionListener
 	    bActividadIniciadaEnvio.addActionListener( this );
 	    this.add( bActividadIniciadaEnvio );
 	    bActividadIniciadaEnvio.setAlignmentX(Component.CENTER_ALIGNMENT);
+	    
+	    bActividadesDisponibles = new JButton( "Ver actividades de caminos disponibles / Iniciar una actividad" );
+	    bActividadesDisponibles.setActionCommand( ACT_DISP );
+	    bActividadesDisponibles.addActionListener( this );
+	    this.add( bActividadesDisponibles );
+	    bActividadesDisponibles.setAlignmentX(Component.CENTER_ALIGNMENT);
 	    
 	    bSalir = new JButton( "Salir" );
 	    bSalir.setActionCommand( SALIR );
@@ -87,10 +96,14 @@ public class PanelBotonesMenuEstudiante extends JPanel implements ActionListener
         {
         	ventMenuEst.mostrarVentanaAvances();
         }
-        else if ( comando.equals( AVANCES ) )
+        else if ( comando.equals( ACT_INC_ENV ) )
         {
         	ventMenuEst.mostrarVentanaActividadEnvio();
         }
+		else if (comando.equals(ACT_DISP))
+		{
+			ventMenuEst.mostrarVentanaActividadesDisponibles();
+		}
 	}
 
 }

@@ -45,7 +45,7 @@ public class VentanaLogIn extends JFrame implements ActionListener
         setLayout( new BorderLayout( ) );
 
         pBotones = new JPanel();
-        pBotones.setLayout(new BoxLayout(pBotones, BoxLayout.Y_AXIS) );
+        pBotones.setLayout(new FlowLayout( ));
         
         pTxtFields = new JPanel();
         pTxtFields.setLayout(new BoxLayout(pTxtFields, BoxLayout.Y_AXIS) );

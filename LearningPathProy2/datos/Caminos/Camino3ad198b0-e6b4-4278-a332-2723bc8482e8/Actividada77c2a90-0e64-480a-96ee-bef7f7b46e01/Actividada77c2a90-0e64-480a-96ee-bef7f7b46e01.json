@@ -1,0 +1,24 @@
+{
+ "descripcion": "Un articulo de magos",
+ "instrucciones": "Lee el articulo",
+ "recurso": "https://adventuretime.fandom.com/wiki/Wizards",
+ "ratingsTotales": 0,
+ "actividadesSigExitoso": [],
+ "actividadesPrereqs": [],
+ "rating": 0,
+ "datosEstudiantes": ["DatoEstudiante_ff76a54d-bcfe-4584-8195-fcf6978e21e9"],
+ "resenias": [],
+ "type": "Actividad recurso",
+ "nombre": "Wizard article",
+ "fechaLim": [
+  2222,
+  12,
+  12
+ ],
+ "objetivos": ["Aprender de magos"],
+ "duracion": 20,
+ "obligatoria": true,
+ "creadorID": "Profesor-wizardLady",
+ "id": "Actividada77c2a90-0e64-480a-96ee-bef7f7b46e01",
+ "dificultad": 5.2
+}

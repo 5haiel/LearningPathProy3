@@ -2,6 +2,7 @@ package traductores;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import caminosActividades.Actividad;
 import caminosActividades.CaminoAprendizaje;
@@ -180,4 +181,19 @@ public class TraductorEstudiante
 		
 		return estudiante.isActividadActiva();
 	}
+	
+	public static List<CaminoAprendizaje> getCaminosEstudiante(String idEstudiante) throws Exception
+    {
+        LearningPathSystem LPS = LearningPathSystem.getInstance();
+        HashMap<String, Estudiante> estudiantes = LPS.getEstudiantes();
+        
+        Estudiante estudiante=estudiantes.get(idEstudiante);
+        
+        if (estudiante==null)
+        {
+            throw new Exception ("No se encontro el estudiante");
+        }
+        
+        return estudiante.getHistorialCaminos();
+    }
 }

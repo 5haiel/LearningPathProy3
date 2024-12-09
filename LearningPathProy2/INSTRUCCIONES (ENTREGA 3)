@@ -1,0 +1,14 @@
+# Learning Path Management System
+
+## Descripción
+Esta aplicación permite a estudiantes y profesores gestionar caminos de aprendizaje mediante actividades como encuestas, exámenes, tareas, quices y actividades de recurso educativo.
+
+## Ejecución de la Aplicación
+
+### Menú General
+Para iniciar la aplicación, ejecuta la clase `VentanaLogin`, en el paquete 'menuSwing'. Este menú ofrece las siguientes opciones:
+- Iniciar sesión.
+- Registrarse como estudiante o profesor.
+- Salir de la aplicación.
+Para poder actualizar la persistencia, es necesario cerrar la aplicación desde los botones de 'Salir', de esta forma, se guardarán los caminos,
+actividades, usuarios, etc., creados durante la sesión.

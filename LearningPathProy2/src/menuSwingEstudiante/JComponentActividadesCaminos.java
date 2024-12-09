@@ -33,8 +33,6 @@ public class JComponentActividadesCaminos extends JPanel implements ListSelectio
         setLayout(new BorderLayout());
 
         dataModel = new DefaultListModel<>();
-        dataModel.addAll(crearListStringCaminosActividades());
-
         listaDeCaminosActividades = new JList<>(dataModel);
         listaDeCaminosActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listaDeCaminosActividades.addListSelectionListener(this);
@@ -44,40 +42,6 @@ public class JComponentActividadesCaminos extends JPanel implements ListSelectio
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
         add(scroll, BorderLayout.CENTER);
-    }
-
-    private List<String> crearListStringCaminosActividades()
-    {
-        List<String> listStringCaminosActividades = new LinkedList<>();
-
-        try
-        {
-            HashMap<String, String> caminos = TraductorCamino.verTodosCaminos();
-            for (HashMap.Entry<String, String> camino : caminos.entrySet())
-            {
-                String idCamino = camino.getKey();
-                String creador = camino.getValue();
-                List<String[]> actividades = TraductorCamino.verActividadesCamino(idCamino);
-
-                StringBuilder caminoInfo = new StringBuilder("Camino: " + idCamino + " - Creador: " + creador + "\n");
-                caminoInfo.append("Actividades:\n");
-
-                for (String[] actividad : actividades)
-                {
-                    caminoInfo.append("  - ID: ").append(actividad[0])
-                              .append(", Nombre: ").append(actividad[1])
-                              .append("\n");
-                }
-
-                listStringCaminosActividades.add(caminoInfo.toString());
-            }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-        return listStringCaminosActividades;
     }
 
     public void actualizarActividades(String idCamino) {
@@ -101,14 +65,11 @@ public class JComponentActividadesCaminos extends JPanel implements ListSelectio
     }
     
     @Override
-    public void valueChanged(ListSelectionEvent e)
-    {
-        if (!e.getValueIsAdjusting())
-        {
+    public void valueChanged(ListSelectionEvent e) {
+        if (!e.getValueIsAdjusting()) {
             String selectedValue = listaDeCaminosActividades.getSelectedValue();
-            if (selectedValue != null)
-            {
-                JOptionPane.showMessageDialog(ventana, "Seleccionado:\n" + selectedValue, "Detalles del Camino", JOptionPane.INFORMATION_MESSAGE);
+            if (selectedValue != null && ventana instanceof VentanaActividadesDisponibles) {
+                ((VentanaActividadesDisponibles) ventana).changeLblActividadSeleccionada(selectedValue);
             }
         }
     }
